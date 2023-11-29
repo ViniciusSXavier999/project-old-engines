@@ -1,0 +1,14 @@
+#img-bg {
+    background-image: url(../../assets/entrar2.jpg);
+
+     min-height: 100vh;
+     
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+a {
+    text-decoration: none;
+}
