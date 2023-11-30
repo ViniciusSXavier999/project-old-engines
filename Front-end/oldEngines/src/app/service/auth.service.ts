@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { UsuarioLogin } from '../model/UsuarioLogin';
 import { Observable } from 'rxjs';
 import { Usuario } from '../model/Usuario';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -20,5 +21,17 @@ export class AuthService {
 
   cadastro (usuario: Usuario): Observable<Usuario> {
     return this.http.post<Usuario>('http://localhost:8080/users/cadastrar', usuario)
+  }
+
+  
+  // vai verificar se existe um token no meu enviroment
+  logado() {
+    let ok: boolean = false 
+
+    if(environment.token != ''){
+      ok = true
+    }
+
+    return ok
   }
 }
